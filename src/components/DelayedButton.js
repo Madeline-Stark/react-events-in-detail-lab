@@ -5,7 +5,7 @@ export default class DelayedButton extends Component {
 handleClick = (event) => {
   //function passed in as prop
   //need arrow function below to preserve this to access this.props.onDelayedClick
-  event.persist()
+  event.persist() //need to persist b/c of pooling
   setTimeout(() => this.props.onDelayedClick(event), this.props.delay)
 }
 
